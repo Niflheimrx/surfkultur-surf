@@ -25,6 +25,9 @@ Development did stop temporarily for a year back in 2019 when I got busy with ma
 ## Why am I releasing this?
 I am now abandoning this gamemode as I think it's time to move on from this base and create something entirely new based on the experience I have as a programmer now. Stellar Movement Mod (smmod) is the future gamemode that the Stellar Surf community will be using and will be the next major thing to happen to Garry's Mod surf. For now, I think this gamemode will suffice for server owners that want to try something new and that is feature packed compared to alternative options. There are some issues with this gamemode that I never got around to fixing but these should be easy to fix, I was just too lazy to get around to it. I don't want to throw away the hard work I put to this over the years so I think this release would be nice for someone who wants to just look at it or even use it on their server. If you do consider using this on your server or appreciate the work I put into it, thank you so much.
 
+# IMPORTANT DISCLAIMER
+This gamemode has works that have not been touched in many years, some of which I created back when I first started programming. As such you'll notice some ugly stuff in this repository that I never got around to fixing, so please be aware of what you are getting into if you want to start making modifications of your own.
+
 # Prerequisites
 You will need a MySQL database server, preferrably a locally hosted one since you'll be making many connections to it at a time if you have a busy server. You will also need the MySQLOO module to use the MySQL functionality for this gamemode, [which can be found here](https://github.com/FredyH/MySQLOO).
 
