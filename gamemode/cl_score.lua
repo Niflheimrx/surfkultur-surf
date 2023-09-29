@@ -264,10 +264,24 @@ local function PutPlayerItem( self, pList, ply, mw )
 	pList:AddItem( btn )
 end
 
+-- temporary, seems nextbots don't return via player.GetBots() anymore?? --
+local function GetBots()
+	local bots = player.GetAll()
+	local tab = {}
+
+	for _,bot in ipairs(bots) do
+		if bot:IsBot() then
+			table.insert(tab, bot)
+		end
+	end
+
+	return tab
+end
+
 local function ListPlayers( self, pList, mw, botlist )
 	local players = {}
 	if botlist then
-		players = player.GetBots()
+		players = GetBots()
 		table.sort( players, function( a, b )
 			if not a or not b then return false end
 			local ra, rb = a:GetNWInt( "Rank", 1 ), b:GetNWInt( "Rank", 1 )
