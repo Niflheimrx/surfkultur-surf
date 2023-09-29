@@ -13,7 +13,7 @@ DeriveGamemode( "base" )
 DEFINE_BASECLASS( "gamemode_base" )
 
 _C = _C or {}
-_C["Version"] = 2
+_C["Version"] = 2.01
 _C["PageSize" ] = 7
 _C["GameType"] = "surf"
 _C["ServerName"] = "My Skill Surf"
