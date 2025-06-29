@@ -251,7 +251,7 @@ function Stage:Finish( ply, nTime )
 	-- If we didn't beat our time, don't proceed to print out rankings and potentially insert unintended records --
 	if !didBeat then return end
 
-	local newRank, oldRank, totalRank = Stage.GetRank( nTime, nStyle, nStage ), currentBest and Stage.GetRank( currentBest[1], nStyle, nStage ) or 1, Stage.GetTotal( nStyle, nStage ) or 1
+	local newRank, oldRank, totalRank = Stage.GetRank( nTime, nStyle, nStage ), currentBest and Stage.GetRank( currentBest[1], nStyle, nStage ) or 1, Stage.GetTotal( nStyle, nStage ) or 0
 
 	-- Setup variables for quick insert/update --
 	local name = ply:Name()
@@ -377,7 +377,7 @@ function Stage:RequestPrestrafe( ply )
 end
 
 function Stage.GetTotal( nStyle, nStage )
-	local total = 1
+	local total = 0
 	local index = Stage.MapTop[nStyle][nStage]
 
 	if !index then return total end
@@ -392,10 +392,12 @@ function Stage.GetRank( nTime, nStyle, nStage )
 	if !index then return rank end
 
 	for i = 1, #index do
-		rank = i
-
 		local time = index[i][1]
-		if nTime < time then break end
+		if nTime >= time then
+			rank = rank + 1
+		continue end
+
+		break
 	end
 
 	return rank
